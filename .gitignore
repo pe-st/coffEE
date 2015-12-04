@@ -1,4 +1,6 @@
 target/
+.sonar/
+.sonar_lock
 
 # binary files
 *.class
@@ -10,6 +12,7 @@ target/
 hs_err_pid*
 
 # IntelliJ IDEA
+**/.idea/copyright/
 **/.idea/dictionaries/
 **/.idea/libraries/
 **/.idea/workspace.xml

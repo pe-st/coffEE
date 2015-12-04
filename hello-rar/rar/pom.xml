@@ -1,27 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>ch.schlau.pesche.coff-ee</groupId>
+        <artifactId>hellorar</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
 
-    <groupId>ch.schlau.pesche.coff-ee</groupId>
-    <artifactId>coff-ee-rar</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <groupId>ch.schlau.pesche.coff-ee.hellorar</groupId>
+    <artifactId>hellorar-rar</artifactId>
     <packaging>rar</packaging>
 
     <name>${project.groupId}.${project.artifactId}</name>
-    <description>coffEE rar</description>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
-        <java.version>1.8</java.version>
-
-        <!-- artifact versions -->
-        <iron.jacamar.version>1.3.1.Final</iron.jacamar.version>
-        <slf4j.version>1.7.12</slf4j.version>
-        <logback.version>1.1.3</logback.version>
-        <junit.version>4.12</junit.version>
-    </properties>
+    <description>coffEE Hello RAR - rar</description>
 
     <dependencies>
         <dependency>
