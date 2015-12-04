@@ -19,49 +19,39 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package ch.schlau.pesche.coffee.hellorar;
+package ch.schlau.pesche.coffee.hellorar.rar;
 
-import javax.naming.NamingException;
-import javax.naming.Reference;
 import javax.resource.ResourceException;
-import javax.resource.spi.ConnectionManager;
+import javax.resource.spi.ManagedConnectionMetaData;
 
 /**
- * HelloWorldConnectionFactoryImpl
+ * HelloWorldManagedConnectionMetaData
  */
-public class HelloWorldConnectionFactoryImpl implements HelloWorldConnectionFactory {
-
-    private static final long serialVersionUID = 1L;
-
-    private Reference reference;
-
-    private HelloWorldManagedConnectionFactory mcf;
-    private ConnectionManager connectionManager;
+public class HelloWorldManagedConnectionMetaData implements ManagedConnectionMetaData {
 
     /**
      * Default constructor
-     *
-     * @param mcf       ManagedConnectionFactory
-     * @param cxManager ConnectionManager
      */
-    public HelloWorldConnectionFactoryImpl(HelloWorldManagedConnectionFactory mcf,
-            ConnectionManager cxManager) {
-        this.mcf = mcf;
-        this.connectionManager = cxManager;
+    public HelloWorldManagedConnectionMetaData() {
     }
 
     @Override
-    public HelloWorldConnection getConnection() throws ResourceException {
-        return (HelloWorldConnection) connectionManager.allocateConnection(mcf, null);
+    public String getEISProductName() throws ResourceException {
+        return "HelloWorld Resource Adapter";
     }
 
     @Override
-    public Reference getReference() throws NamingException {
-        return reference;
+    public String getEISProductVersion() throws ResourceException {
+        return "1.0";
     }
 
     @Override
-    public void setReference(Reference reference) {
-        this.reference = reference;
+    public int getMaxConnections() throws ResourceException {
+        return 0;
+    }
+
+    @Override
+    public String getUserName() throws ResourceException {
+        return null;
     }
 }

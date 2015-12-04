@@ -2,7 +2,7 @@
 <ironjacamar>
     <connection-definitions>
         <connection-definition
-                class-name="ch.schlau.pesche.coffee.hellorar.HelloWorldManagedConnectionFactory"
+                class-name="ch.schlau.pesche.coffee.hellorar.rar.HelloWorldManagedConnectionFactory"
                 jndi-name="java:/eis/HelloWorld"/>
     </connection-definitions>
 </ironjacamar>

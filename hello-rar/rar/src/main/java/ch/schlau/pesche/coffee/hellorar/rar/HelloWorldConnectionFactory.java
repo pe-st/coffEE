@@ -19,39 +19,25 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package ch.schlau.pesche.coffee.hellorar;
+package ch.schlau.pesche.coffee.hellorar.rar;
 
+import java.io.Serializable;
+
+import javax.resource.Referenceable;
 import javax.resource.ResourceException;
-import javax.resource.spi.ManagedConnectionMetaData;
 
 /**
- * HelloWorldManagedConnectionMetaData
+ * HelloWorldConnectionFactory
  */
-public class HelloWorldManagedConnectionMetaData implements ManagedConnectionMetaData {
+public interface HelloWorldConnectionFactory extends Serializable, Referenceable {
 
     /**
-     * Default constructor
+     * Get connection from factory
+     *
+     * @return HelloWorldConnection instance
+     *
+     * @throws ResourceException Thrown if a connection can't be obtained
      */
-    public HelloWorldManagedConnectionMetaData() {
-    }
+    HelloWorldConnection getConnection() throws ResourceException;
 
-    @Override
-    public String getEISProductName() throws ResourceException {
-        return "HelloWorld Resource Adapter";
-    }
-
-    @Override
-    public String getEISProductVersion() throws ResourceException {
-        return "1.0";
-    }
-
-    @Override
-    public int getMaxConnections() throws ResourceException {
-        return 0;
-    }
-
-    @Override
-    public String getUserName() throws ResourceException {
-        return null;
-    }
 }
